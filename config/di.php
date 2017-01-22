@@ -4,6 +4,8 @@
  * Here I use DI PHP-DI to set services I need with it's initialization logic
  */
 use VideoPublisher\Domain\Data\MediaContent\FileLocation\Repository\LocalFileLocationRepository;
+use VideoPublisherApp\Infrastructure\FileLocation\Factory\FileLocationRepositoryFactory;
+use VideoPublisherApp\Infrastructure\Platform\YoutubePlatformRepository;
 
 return [
     'di' => [
@@ -17,9 +19,13 @@ return [
             $client = new Google_Client();
             $client->setApplicationName('VideoPublisherApp');
             $client->setAccessToken(env('YOUTUBE_ACCESS_TOKEN')); // TODO connect to Access token dynamic storage
+            $client->setClientId(config('content_platforms.youtube.oauth.id'));
+            $client->setClientSecret(config('content_platforms.youtube.oauth.secret'));
             $service = new Google_Service_YouTube($client);
             
-            return new YoutubePlatformRepository($service);
+            $file_location_factory = new FileLocationRepositoryFactory();
+            
+            return new YoutubePlatformRepository($service, $file_location_factory);
             
         }),
         

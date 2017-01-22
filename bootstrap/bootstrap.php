@@ -35,16 +35,23 @@ function storage_path($relative_path = '')
 {
     $storage_path = config('storage_path');
     
-    return $storage_path . ltrim($relative_path, '/');
+    return $storage_path . '/' . ltrim($relative_path, '/');
 }
 
 //
 // Init dep container
 //
-$container = DI\ContainerBuilder::buildDevContainer();
-function container()
+$builder = new \DI\ContainerBuilder();
+$builder->useAnnotations(false);
+$builder->addDefinitions(config('di'));
+$container = $builder->build();
+function container($service_name = null)
 {
     global $container;
     
-    return $container;
+    if(is_null($service_name)) {
+        return $container;
+    } else {
+        return $container->get($service_name);
+    }
 }

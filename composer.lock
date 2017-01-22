@@ -517,7 +517,7 @@
             "source": {
                 "type": "git",
                 "url": "/Users/dmitriylezhnev/Code/dev/VideoPublisher/Domain",
-                "reference": "14f2120cbcde2e00f4148eca419c6b98d34a5280"
+                "reference": "7d7928cdf249ea963bc1b96fe2d2f8dd16396053"
             },
             "require": {
                 "doctrine/collections": "^1.3",
@@ -551,7 +551,7 @@
                 }
             ],
             "description": "Library with models of managing video assets, publishing them on popular platforms and getting analytics back from there",
-            "time": "2017-01-22 15:00:24"
+            "time": "2017-01-22 17:07:44"
         },
         {
             "name": "monolog/monolog",

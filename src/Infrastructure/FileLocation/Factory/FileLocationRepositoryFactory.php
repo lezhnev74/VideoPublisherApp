@@ -1,4 +1,5 @@
 <?php
+namespace VideoPublisherApp\Infrastructure\FileLocation\Factory;
 
 use VideoPublisher\Domain\Data\MediaContent\FileLocation\FileLocation;
 use VideoPublisher\Domain\Data\MediaContent\FileLocation\Repository\Factory\UnsupportedFileLocationRepository;
