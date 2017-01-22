@@ -1,0 +1,13 @@
+## Platform Repository
+Each platform has it's implementation class which implements special PlatformRepository interface to access it's data.
+To connect implementation I should use di_config.php to set initialization logic.
+name of the key in array should be "platform.<platform_name>"
+
+## Youtube Set-up
+Ref: https://developers.google.com/youtube/v3/docs/
+Ref: https://developers.google.com/api-client-library/php/start/get_started
+I need to create API project to get my credentials
+
+To upload video I need auth Token: I can get it via following this guide:
+https://developers.google.com/youtube/v3/guides/auth/server-side-web-apps
+

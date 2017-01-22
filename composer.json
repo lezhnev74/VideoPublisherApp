@@ -1,0 +1,40 @@
+{
+    "name": "lezhnev74/video-publisher-app",
+    "description": "Application that uses predefined Domain Model and adds proper implementation to it",
+    "type": "project",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Dmitriy Lezhnev",
+            "email": "lezhnev.work@gmail.com"
+        }
+    ],
+    "repositories": [
+        {
+            "type": "vcs",
+            "url": "/Users/dmitriylezhnev/Code/dev/VideoPublisher/Domain"
+        }
+    ],
+    "require": {
+        "php": "^7.1",
+        "lezhnev74/video-publisher-domain": "dev-master@dev",
+        "php-di/php-di": "^5.4",
+        "vlucas/phpdotenv": "^2.4",
+        "hassankhan/config": "^0.10.0",
+        "google/apiclient": "^2.0"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "^5.5",
+        "fzaninotto/faker": "^1.6"
+    },
+    "autoload": {
+        "psr-4": {
+            "VideoPublisherApp\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "VideoPublisherApp\\Tests\\": "tests/"
+        }
+    }
+}
