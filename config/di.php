@@ -5,6 +5,7 @@
  */
 use VideoPublisher\Domain\Data\MediaContent\FileLocation\Repository\LocalFileLocationRepository;
 use VideoPublisherApp\Infrastructure\FileLocation\Factory\FileLocationRepositoryFactory;
+use VideoPublisherApp\Infrastructure\Platform\YoutubePlatformReportingTotalViewsRepository;
 use VideoPublisherApp\Infrastructure\Platform\YoutubePlatformRepository;
 
 return [
@@ -29,6 +30,12 @@ return [
             
         }),
         
+        //
+        // Platform reporting repository
+        //
+        'platform.reporting.total_views.repository.youtube' => \DI\factory(function() {
+            return new YoutubePlatformReportingTotalViewsRepository(config('content_platforms.youtube.api.key'));
+        }),
         
         //
         // FileLocation Repositories
